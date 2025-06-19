@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Chatbot } from './chatbot/chatbot';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [CommonModule, Chatbot],
+  template: `
+    <main>
+      <h1>Welcome to Angular Chatbot</h1>
+      <app-chatbot></app-chatbot>
+    </main>
+  `,
+  styles: []
 })
 export class App {
-  protected title = 'samp-chat';
+  title = 'angular-chatbot';
 }
