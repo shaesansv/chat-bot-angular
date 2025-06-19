@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, Chatbot],
   template: `
     <main>
-      <h1>Welcome to Angular Chatbot</h1>
+      <h1>Chatbot</h1>
       <app-chatbot></app-chatbot>
     </main>
   `,

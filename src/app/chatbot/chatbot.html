@@ -1,7 +1,7 @@
 <div class="chatbot-container">
-  <h2>Simple Chatbot</h2>
+  <h2>Chatbot</h2>
   
-  <div class="chat-messages">
+  <div #messageContainer class="chat-messages">
     <div *ngFor="let message of messages" class="message" [class.user]="message.isUser">
       {{ message.text }}
     </div>
@@ -12,7 +12,7 @@
       type="text" 
       [(ngModel)]="userInput" 
       (keyup.enter)="sendMessage()" 
-      placeholder="Type a greeting like 'hello'..."
+      placeholder="Type here"
     />
     <button (click)="sendMessage()">Send</button>
   </div>
