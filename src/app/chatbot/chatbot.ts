@@ -1,6 +1,11 @@
 import { Component, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import responses from '../../assets/greeting-responses.json';
+
+type ResponseCategory = {
+  [key: string]: string;
+};
 
 @Component({
   selector: 'app-chatbot',
@@ -14,22 +19,16 @@ export class Chatbot implements AfterViewChecked {
   
   userInput: string = '';
   messages: { text: string, isUser: boolean }[] = [];
-  greetingResponses: { [key: string]: string } = {
-    'hello': 'Hello there! How can I help you today?😁',
-    'hi': 'Hi! Nice to meet you!😊',
-    'hey': 'Hey! What can I do for you?',
-    'good morning': 'Good morning! Have a great day!😇',
-    'good afternoon': 'Good afternoon! How are you doing?',
-    'good evening': 'Good evening! Hope you had a good day!😌',
-    'gud mrng': 'Good morning! Have a great day!',
-    'gud aftnoon': 'Good afternoon! How are you doing?',
-    'gud evng': 'Good evening! Hope you had a good day!😌',
-    'howdy': 'Howdy partner!',
-    'chatbot': 'Yeah, How can I help you?',
-    'bot': 'Yeah, How can I help you?',
-  };
+  responseData: {
+    greetings: ResponseCategory;
+    farewells: ResponseCategory;
+    faqs: ResponseCategory;
+    commands: ResponseCategory;
+    mood_responses: ResponseCategory;
+  } = responses;
 
-  ngAfterViewChecked() {
+  // Properly implement AfterViewChecked
+  ngAfterViewChecked(): void {
     this.scrollToBottom();
   }
 
@@ -56,13 +55,27 @@ export class Chatbot implements AfterViewChecked {
   }
 
   private getBotResponse(input: string): string {
-    if (this.greetingResponses[input]) {
-      return this.greetingResponses[input];
+    const categories: (keyof typeof this.responseData)[] = [
+      'greetings',
+      'farewells',
+      'faqs',
+      'commands',
+      'mood_responses'
+    ];
+
+    // Check exact matches first
+    for (const category of categories) {
+      if (this.responseData[category][input]) {
+        return this.responseData[category][input];
+      }
     }
 
-    for (const greeting in this.greetingResponses) {
-      if (input.includes(greeting)) {
-        return this.greetingResponses[greeting];
+    // Check partial matches
+    for (const category of categories) {
+      for (const key in this.responseData[category]) {
+        if (input.includes(key)) {
+          return this.responseData[category][key];
+        }
       }
     }
 

@@ -1,0 +1,43 @@
+{ 
+    "greetings" : {
+    "hello" : "Hello there! How can I help you today?😁",
+    "hi": "Hi! Nice to meet you!😊",
+    "hey": "Hey! What can I do for you?",
+    "good morning": "Good morning! Have a great day!😇",
+    "good afternoon": "Good afternoon! How are you doing?",
+    "good evening": "Good evening! Hope you had a good day!😌",
+    "gud mrng": "Good morning! Have a great day!",
+    "gud aftnoon": "Good afternoon! How are you doing?",
+    "gud evng": "Good evening! Hope you had a good day!😌",
+    "howdy": "Howdy partner!",
+    "chatbot": "Yeah, How can I help you?",
+    "bot": "Yeah, How can I help you?",
+    "ultron": "Yes, I'm here!!"
+  },
+
+   "farewells": {
+    "bye": "Goodbye! Come back soon! 👋",
+    "goodnight": "Sweet dreams! 🌙"
+  },
+
+  "faqs": {
+    "what is your name": "I'm a friendly chatbot! You can call me Ultron. 🤖",
+    "what can you do": "I can answer questions, chat, and help with basic tasks. Try asking me anything!",
+    "how old are you": "I'm just a program, so I don't have an age! 😄",
+    "who made you": "I was created by a developer using Angular and TypeScript!"
+  },
+
+  "commands": {
+    "help": "Here's what I can do:\n- Say hello/goodbye\n- Answer FAQs\n- Tell a joke\n- Show today's weather (try 'weather')",
+    "joke": "Why don’t scientists trust atoms?\nBecause they make up everything! 😆",
+    "weather": "I can't fetch real-time weather yet, but it's sunny in my code! ☀️",
+    "clear": "Clearing the chat... (this would trigger a UI action)"
+  },
+
+   "mood_responses": {
+    "happy": "Glad you're happy! Let's keep the good vibes going! 🎉",
+    "sad": "I’m sorry to hear that. Want to hear a joke to cheer you up? 😊",
+    "angry": "Take a deep breath. I’m here if you want to talk. 💙",
+    "bored": "Let’s liven things up! Ask me to tell a joke or a fun fact."
+  }
+}
