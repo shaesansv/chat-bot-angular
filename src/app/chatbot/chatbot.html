@@ -1,6 +1,11 @@
 <div class="chatbot-container">
-  <h2>Chatbot</h2>
-  
+ <div class="chat-header">
+  <div class="header-logo">
+    <span class="material-symbols-outlined">robot_2</span>
+    <h2>Chatbot</h2>
+  </div>
+  <button class="material-symbols-outlined">keyboard_arrow_down</button>
+ </div>
   <div #messageContainer class="chat-messages">
     <div *ngFor="let message of messages" class="message" [class.user]="message.isUser">
       {{ message.text }}

@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { Chatbot } from './chatbot/chatbot';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, Chatbot],
   template: `
     <main>
-      <h1>Chatbot</h1>
       <app-chatbot></app-chatbot>
     </main>
   `,
