@@ -17,7 +17,10 @@ type ResponseCategory = {
 export class Chatbot implements AfterViewChecked {
   @ViewChild('messageContainer') private messageContainer!: ElementRef;
   
+  showChatbot: boolean = false;
   userInput: string = '';
+  // Add this property
+  isCollapsed: boolean = false;
   messages: { text: string, isUser: boolean }[] = [];
   responseData: {
     greetings: ResponseCategory;
@@ -30,6 +33,21 @@ export class Chatbot implements AfterViewChecked {
   // Properly implement AfterViewChecked
   ngAfterViewChecked(): void {
     this.scrollToBottom();
+  }
+
+ toggleChatbot() {
+  this.showChatbot = !this.showChatbot;
+  if (this.showChatbot) {
+    this.isCollapsed = false;
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+  // Add this method
+  toggleChat() {
+    this.isCollapsed = !this.isCollapsed;
   }
 
   sendMessage() {
