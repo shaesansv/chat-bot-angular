@@ -1,26 +1,23 @@
-<div [class.show-chatbot]="showChatbot"> <!-- Fixed class name -->
+<div [class.show-chatbot]="showChatbot"> 
     <button id="chatbot-toggle" (click)="toggleChatbot()">
       <span class="material-symbols-outlined">{{showChatbot ? 'close' : 'mode_comment'}}</span>
     </button>
   
-  <div class="chatbot-container" [class.collapsed]="isCollapsed">
+  <div class="chatbot-container">
     <div class="chat-header">
       <div class="header-logo">
         <span class="material-symbols-outlined">robot_2</span>
         <h2>Chatbot</h2>
       </div>
-      <!-- <button class="material-symbols-outlined" (click)="toggleChat()">
-        {{isCollapsed ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}
-      </button> -->
     </div>
     
-    <div #messageContainer class="chat-messages" *ngIf="!isCollapsed"> <!-- Fixed *ngIf condition -->
+    <div #messageContainer class="chat-messages">
       <div *ngFor="let message of messages" class="message" [class.user]="message.isUser">
         {{ message.text }}
       </div>
     </div>
     
-    <div class="input-area" *ngIf="!isCollapsed"> <!-- Added *ngIf -->
+    <div class="input-area">
       <input 
         type="text" 
         [(ngModel)]="userInput" 

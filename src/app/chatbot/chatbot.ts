@@ -19,7 +19,6 @@ export class Chatbot implements AfterViewChecked {
   
   showChatbot: boolean = false;
   userInput: string = '';
-  // Add this property
   isCollapsed: boolean = false;
   messages: { text: string, isUser: boolean }[] = [];
   responseData: {
@@ -29,8 +28,8 @@ export class Chatbot implements AfterViewChecked {
     commands: ResponseCategory;
     mood_responses: ResponseCategory;
   } = responses;
+  
 
-  // Properly implement AfterViewChecked
   ngAfterViewChecked(): void {
     this.scrollToBottom();
   }
@@ -44,11 +43,6 @@ export class Chatbot implements AfterViewChecked {
     document.body.style.overflow = '';
   }
 }
-
-  // Add this method
-  toggleChat() {
-    this.isCollapsed = !this.isCollapsed;
-  }
 
   sendMessage() {
     if (this.userInput.trim() === '') return;
@@ -81,14 +75,12 @@ export class Chatbot implements AfterViewChecked {
       'mood_responses'
     ];
 
-    // Check exact matches first
     for (const category of categories) {
       if (this.responseData[category][input]) {
         return this.responseData[category][input];
       }
     }
 
-    // Check partial matches
     for (const category of categories) {
       for (const key in this.responseData[category]) {
         if (input.includes(key)) {

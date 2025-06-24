@@ -39,32 +39,8 @@
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#ffd60a, #ffbe0b, #ff9f1c, #fb5607, #c1121f);
+  background: #00509d;
 }
-
-/* #chatbot-toggle span {
-  position: absolute;
-  color: white;
-} */
-
-/* .chatbot-container .collapsed {
-  min-height: auto;
-  height: 60px;
-  overflow: hidden;
-}
-
-.chatbot-container .collapsed .chat-messages,
-.chatbot-container .collapsed .input-area {
-  display: none;
-} */
-
-/* .chatbot-container .chat-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  width: 100%;
-  align-items: center;
-} */
 
 .chat-header span {
   background-color: white;
