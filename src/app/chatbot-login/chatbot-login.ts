@@ -5,6 +5,12 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../auth';
+import users from '../../assets/users.json';
+
+type User = {
+  username: string;
+  password: string;
+};
 
 @Component({
   selector: 'app-chatbot-login',
@@ -22,9 +28,8 @@ export class ChatbotLogin {
   isLoading = false;
   errorMessage = '';
   
-  // Default credentials
-  private readonly DEFAULT_USERNAME = 'admin';
-  private readonly DEFAULT_PASSWORD = 'admin123';
+  // Users data from Json file
+  private readonly users: User[] = users;
 
   constructor(
     private fb: FormBuilder,
@@ -44,8 +49,12 @@ export class ChatbotLogin {
       
       const { username, password } = this.loginForm.value;
       
-      // Verify against default credentials
-      if (username === this.DEFAULT_USERNAME && password === this.DEFAULT_PASSWORD) {
+      // Verify against users.json credentials
+      const foundUser = this.users.find(user =>
+        user.username === username && user.password === password
+      );
+
+      if (foundUser) {
         this.authService.login(username, password).subscribe({
           next: (success) => {
             if (success) {

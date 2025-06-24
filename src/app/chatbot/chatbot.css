@@ -1,9 +1,10 @@
 .chatbot-container {
-  max-width: 420px;
+  max-width: 320px;
   opacity: 0;
   pointer-events: none;
   min-height: 75vh;
-  margin: 20px auto;
+  margin: 30px auto;
+  margin-right: 90px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
