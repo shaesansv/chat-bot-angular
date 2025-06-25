@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../auth';
-import users from '../../assets/users.json';
+import users from '../../assets/users.json'; // Import users data
 
 type User = {
   username: string;
@@ -28,7 +28,7 @@ export class ChatbotLogin {
   isLoading = false;
   errorMessage = '';
   
-  // Users data from Json file
+  // Users data from JSON file
   private readonly users: User[] = users;
 
   constructor(
@@ -49,8 +49,8 @@ export class ChatbotLogin {
       
       const { username, password } = this.loginForm.value;
       
-      // Verify against users.json credentials
-      const foundUser = this.users.find(user =>
+      // Verify against users.json data
+      const foundUser = this.users.find(user => 
         user.username === username && user.password === password
       );
 

@@ -34,10 +34,6 @@
         {{ errorMessage }}
       </div>
 
-      <div *ngIf="isLoading" class="loading-indicator">
-    Verifying credentials...
-  </div>
-
       <button 
         type="submit" 
         class="login-button" 
@@ -45,5 +41,8 @@
         {{ isLoading ? 'Logging in...' : 'Login' }}
       </button>
     </form>
+    <div *ngIf="isLoading" class="loading-indicator">
+    Verifying credentials...
+  </div>
   </div>
 </div>
