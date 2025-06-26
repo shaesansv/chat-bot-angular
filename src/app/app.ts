@@ -8,14 +8,14 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    RouterOutlet  // Only RouterOutlet is needed in the template
+    RouterOutlet, // Only RouterOutlet is needed in the template
   ],
   template: `
     <main>
       <router-outlet></router-outlet>
     </main>
   `,
-  styles: []
+  styles: [],
 })
 export class App {
   title = 'angular-chatbot';

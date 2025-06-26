@@ -3,16 +3,16 @@
     <h1 class="login-title">Chatbot Login</h1>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="email">Email</label>
         <input 
-          type="text" 
-          id="username" 
-          formControlName="username" 
-          placeholder="Enter your username"
-          [class.invalid]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
-        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
-          <span *ngIf="loginForm.get('username')?.errors?.['required']">Username is required</span>
-          <span *ngIf="loginForm.get('username')?.errors?.['minlength']">Username must be at least 3 characters</span>
+          type="email" 
+          id="email" 
+          formControlName="email" 
+          placeholder="Enter your email"
+          [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">
+          <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</span>
+          <span *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</span>
         </div>
       </div>
 
@@ -42,7 +42,10 @@
       </button>
     </form>
     <div *ngIf="isLoading" class="loading-indicator">
-    Verifying credentials...
-  </div>
+      Verifying credentials...
+    </div>
+    <div class="register-link">
+      Don't have an account? <a routerLink="/register">Register</a>
+    </div>
   </div>
 </div>

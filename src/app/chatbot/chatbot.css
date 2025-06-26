@@ -1,9 +1,13 @@
+.chat-page {
+  background: #778da9;
+  height: 680px;
+}
 .chatbot-container {
-  max-width: 320px;
+  max-width: 300px;
   opacity: 0;
   pointer-events: none;
   min-height: 75vh;
-  margin: 30px auto;
+  margin: 0 auto;
   margin-right: 90px;
   padding: 20px;
   border: 1px solid #ddd;
